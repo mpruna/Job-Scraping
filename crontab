@@ -1,0 +1,12 @@
+SHELL=/bin/bash
+SLACK_BOT_TOKEN="slack_bot_api"
+home="script_home"
+py="python_env_location"
+
+# Run the script in a conda environment
+# Before running an environment seutp an anaconda env
+
+# 10 * * * * conda activate "my_env"; $py  $home/web_scraper.py -r yes -t "python docker" -e Junior >>$home/cron_exec.txt 2>&1
+
+# Run the script as a cron job
+35 * * * * python $home/web_scraper.py -r yes -t "python docker" -e "Junior" >> $home/script_exec.txt 2>&1
